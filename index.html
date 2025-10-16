@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hackathon Projects</title>
+
+    <!-- FontAwesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <style>
       :root {
         --primary-color: #4f46e5;
@@ -41,8 +48,8 @@
       }
 
       .profile-img {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 10px;
@@ -156,9 +163,106 @@
         position: relative;
         z-index: 2;
       }
+
+            /* Social box: no solid color, only a tiny translucent layer so backdrop-filter applies */
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 40px;
+        padding: 22px;
+        border-radius: 16px;
+
+        /* Make the element effectively transparent but allow backdrop-filter to affect what's behind it */
+        background: rgba(
+          255,
+          255,
+          255,
+          0.02
+        ); /* near-transparent — keeps wallpaper visible */
+        -webkit-backdrop-filter: brightness(0.7) blur(4px); /* Safari */
+        backdrop-filter: brightness(0.7) blur(4px); /* dim the wallpaper underneath and add gentle blur */
+
+        border: 1px solid rgba(255, 255, 255, 0.06); /* subtle edge so box reads as a card */
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      }
+
+      /* Links stay bright so they pop against the dimmed background */
+      .social-links a {
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--dark-color);
+        border-radius: 10px;
+        padding: 10px 14px;
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.22s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Hover */
+      .social-links a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+        background: #ffffff;
+      }
     </style>
   </head>
   <body>
+
+        <div class="profile">
+      <img src="./me.jpg" alt="Profile" class="profile-img" />
+      <h1>Ajay Reddy</h1>
+      <p class="subheading bio">
+        🎓 IBM Certified | 💻 Full Stack Developer (MERN, React, Node,
+        TypeScript) | ☁️ Cloud & DevOps (AWS, Docker, CI/CD) | 🤖 AI/ML
+        Practitioner | 🔗 REST APIs, GraphQL & WebSockets | 🏗️ System Design &
+        Scalable Apps | 🌍 3x Tech Ambassador | 🏆 7x Hackathons
+      </p>
+
+      <br /><br />
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/ajayreddytech/" target="_blank"
+          ><i class="fab fa-linkedin"></i> LinkedIn</a
+        >
+        <a href="https://github.com/ajayreddytech" target="_blank"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+        <a href="https://ajayhackz.netlify.app/" target="_blank"
+          ><i class="fa-solid fa-globe"></i> Portfolio</a
+        >
+        <a href="https://ajayhacks.netlify.app/" target="_blank"
+          ><i class="fa-solid fa-trophy"></i> Hackathons</a
+        >
+        <a
+          href="https://drive.google.com/drive/folders/1UURMV6IbZpyhE84iOi6OcfKV76dvTlB7?usp=sharing"
+          target="_blank"
+          ><i class="fa-solid fa-certificate"></i> Certifications</a
+        >
+        <a
+          href="https://drive.google.com/file/d/1bVJ8K0N8ejcJc16ZmxAYtVVOpDgCIGkm/view?usp=sharing"
+          target="_blank"
+          ><i class="fa-solid fa-file-lines"></i> Resume</a
+        >
+        <a href="https://leetcode.com/u/_ajayreddytech/" target="_blank"
+          ><i class="fa-solid fa-bolt"></i> LeetCode</a
+        >
+        <a href="https://linktr.ee/ajayreddytech" target="_blank"
+          ><i class="fa-solid fa-link"></i> LinkTree</a
+        >
+        <a href="https://calendly.com/ajayreddytech" target="_blank"
+          ><i class="fa-solid fa-calendar-days"></i> Calendly</a
+        >
+        <a href="mailto:ajayreddy.tech@gmail.com"
+          ><i class="fa-solid fa-envelope"></i> Email</a
+        >
+        <a href="tel:+1-437-973-6846"><i class="fa-solid fa-phone"></i> Call</a>
+      </div>
+    </div>
+
     <!-- Animated background bubbles -->
     <div class="bubbles">
       <div
@@ -188,7 +292,6 @@
     </div>
 
     <div class="profile">
-      <img src="./me.jpg" alt="Profile" class="profile-img" />
       <h1>Hackathon Projects</h1>
     </div>
 
